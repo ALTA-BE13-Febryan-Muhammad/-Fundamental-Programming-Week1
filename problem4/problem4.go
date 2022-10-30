@@ -4,6 +4,24 @@ import "fmt"
 
 func ArrayUnique(arrayA, arrayB []int) []int {
 	// your code here
+	var hasil []int
+
+	for i := 0; i < len(arrayA); i++ {
+		var jawab bool = false
+		for j := 0; j < len(arrayB); j++ {
+			if arrayA[i] == arrayB[j] {
+				jawab = true
+			}
+		}
+		if !jawab {
+			hasil = append(hasil, arrayA[i])
+		}
+	}
+	if len(hasil) == 0 {
+		return []int{}
+	}
+	return hasil
+
 }
 
 func main() {

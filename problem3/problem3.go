@@ -2,10 +2,21 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func MunculSekali(angka string) []int {
 	// your code here
+	var jawaban []int
+	for i := 0; i < len(angka); i++ {
+		if strings.Count(angka, string(angka[i])) <= 1 {
+			jawaban = append(jawaban, int(angka[i]-'0'))
+		}
+	}
+	if len(jawaban) == 0 {
+		return []int{}
+	}
+	return jawaban
 
 }
 

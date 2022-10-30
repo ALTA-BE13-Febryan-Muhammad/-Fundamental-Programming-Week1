@@ -4,6 +4,28 @@ import "fmt"
 
 func RemoveDuplicates(array []int) int {
 	// your code here
+	keys := make(map[int]bool)
+	list := []int{}
+
+	for _, items := range array {
+		if _, value := keys[items]; !value {
+			keys[items] = true
+			list = append(list, items)
+		}
+	}
+	return len(list)
+
+	// keys := make(map[int]bool)
+	// list := []int{}
+
+	// for , items := range array {
+	//     if , value := keys[items]; !value {
+	//         keys[items] = true
+	//         list = append(list, items)
+	//     }
+	// }
+	// return len(list)
+
 }
 
 func main() {
